@@ -1,0 +1,114 @@
+{
+  "election": [
+    {
+      "election_timeout_ms": "150-151",
+      "no_initial_leader_in_20s": "152/300",
+      "no_leader_20s_after_crash": 110,
+      "measured": 38,
+      "median_ms": 1410.0,
+      "p95_ms": 16500.8,
+      "max_ms": 18070.0
+    },
+    {
+      "election_timeout_ms": "150-155",
+      "no_initial_leader_in_20s": "185/300",
+      "no_leader_20s_after_crash": 78,
+      "measured": 37,
+      "median_ms": 350.0,
+      "p95_ms": 16152.0,
+      "max_ms": 19325.0
+    },
+    {
+      "election_timeout_ms": "150-175",
+      "no_initial_leader_in_20s": "0/300",
+      "no_leader_20s_after_crash": 0,
+      "measured": 300,
+      "median_ms": 327.5,
+      "p95_ms": 1155.5,
+      "max_ms": 2150.0
+    },
+    {
+      "election_timeout_ms": "150-200",
+      "no_initial_leader_in_20s": "0/300",
+      "no_leader_20s_after_crash": 0,
+      "measured": 300,
+      "median_ms": 175.0,
+      "p95_ms": 565.0,
+      "max_ms": 1050.0
+    },
+    {
+      "election_timeout_ms": "150-300",
+      "no_initial_leader_in_20s": "0/300",
+      "no_leader_20s_after_crash": 0,
+      "measured": 300,
+      "median_ms": 190.0,
+      "p95_ms": 380.3,
+      "max_ms": 630.0
+    }
+  ],
+  "loss": [
+    {
+      "drop_rate": 0.0,
+      "acked_%": 100.0,
+      "p50_latency_ms": 19.6,
+      "p99_latency_ms": 25.9,
+      "messages_per_write": 92.4,
+      "safety_errors": 0
+    },
+    {
+      "drop_rate": 0.05,
+      "acked_%": 100.0,
+      "p50_latency_ms": 21.2,
+      "p99_latency_ms": 27.9,
+      "messages_per_write": 57.9,
+      "safety_errors": 0
+    },
+    {
+      "drop_rate": 0.1,
+      "acked_%": 100.0,
+      "p50_latency_ms": 22.3,
+      "p99_latency_ms": 30.2,
+      "messages_per_write": 41.7,
+      "safety_errors": 0
+    },
+    {
+      "drop_rate": 0.2,
+      "acked_%": 100.0,
+      "p50_latency_ms": 24.5,
+      "p99_latency_ms": 37.0,
+      "messages_per_write": 26.1,
+      "safety_errors": 0
+    },
+    {
+      "drop_rate": 0.3,
+      "acked_%": 100.0,
+      "p50_latency_ms": 27.6,
+      "p99_latency_ms": 55.8,
+      "messages_per_write": 18.5,
+      "safety_errors": 0
+    }
+  ],
+  "chaos": {
+    "runs": 300,
+    "runs_with_violations": 0,
+    "acknowledged_writes_total": 85975,
+    "seconds": 18.8
+  },
+  "bug_injection": [
+    {
+      "injected_bug": "vote ignores log up-to-dateness",
+      "runs_with_violations": "179/300",
+      "first_failing_run": 0,
+      "violation_types": [
+        "lost acknowledged write",
+        "state-machine safety"
+      ]
+    },
+    {
+      "injected_bug": "commit by counting old-term entries",
+      "runs_with_violations": "0/300",
+      "first_failing_run": null,
+      "violation_types": []
+    }
+  ]
+}
